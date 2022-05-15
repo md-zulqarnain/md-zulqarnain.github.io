@@ -1,0 +1,61 @@
+<div class="appWrapper">
+    <div class="appContainer">
+        <div class="pageHeader">
+            <div class="headerLeft">
+                <a routerLink="../home">
+                    <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L1 8L8 1" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="pageTitle">
+                <h4>Users</h4>
+            </div>
+        </div>
+        <div class=" pb-30 px-25">
+            <table mat-table [dataSource]="users" class="mat-elevation-z8">
+                <ng-container matColumnDef="photoURL">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let users">
+                        <img [src]="users.photoURL">
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="displayName">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                    <td mat-cell *matCellDef="let users">
+                        {{users.displayName}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef>Email</th>
+                    <td mat-cell *matCellDef="let users">
+                        {{users.email}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="isVerified">
+                    <th mat-header-cell *matHeaderCellDef>Is Verified</th>
+                    <td mat-cell *matCellDef="let users">
+                        {{users.isVerified}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let users">
+                        <button mat-raised-button color="primary" (click)="activeDeactiveUser(users.id, 1)"
+                            class="me-3">Activate</button>
+                        <button mat-raised-button color="warn"
+                            (click)="activeDeactiveUser(users.id, 0)">Deactivate</button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,329 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ng-firebase-primary: mat.define-palette(mat.$indigo-palette);
+$ng-firebase-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ng-firebase-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ng-firebase-theme: mat.define-light-theme((
+  color: (
+    primary: $ng-firebase-primary,
+    accent: $ng-firebase-accent,
+    warn: $ng-firebase-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($ng-firebase-theme);
+
+@import url(assets/default.css);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.example-full-width {
+    width: 100%;
+}
+
+.timeCard .mat-card {
+    background: #ffffff14;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.time {
+    margin-bottom: 20px;
+}
+
+.timeCard .mat-card mat-card-content .timeT {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+.timeCard .mat-card mat-card-title.mat-card-title {
+    color: #fff;
+    font-weight: 100;
+    font-size: 17px;
+    margin: 0;
+}
+.time > h5 {
+    color: #0f0056;
+    font-size: 25px;
+    font-weight: 500;
+}
+.splashScreen{
+    display: -webkit-box;
+    display: -moz-box;   
+    display: -ms-flexbox; 
+    display: -webkit-flex;
+    display: flex; 
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #7463e4 0%, #462fb0 100%);
+}
+.splashScreenInner img {
+    max-width: 110px;
+}
+
+
+/* FOOTER CSS START */
+.site-footer .site-footerBar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.site-footer .site-footerBar ul li {
+  flex: 1 1 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+.site-footer .site-footerBar ul li svg {
+  margin: 0 auto;
+  display: block;
+  opacity: 0.5;
+}
+.site-footer .site-footerBar ul li span {
+    display: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin-top: 6px;
+    line-height: 12px;
+}
+.site-footer .site-footerBar ul li.addCenterMenu a {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgb(79 79 79 / 50%);
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+.site-footer .site-footerBar ul li.active span {
+  display: block;
+}
+.site-footer .site-footerBar ul li.active svg {
+  opacity: 1;
+}
+.site-footer.footer-with-shadow {
+  box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+}
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+  background: #362397;
+  max-width: 900px;
+}
+.site-footer {
+    border-radius: 30px 30px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.20);
+}
+/* FOOTER CSS END */
+
+
+.loading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+}
+.site-footer .site-footerBar ul li a {
+    text-decoration: none;
+}
+// My Account Start
+.myAccount h3 {
+    font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  color: #1c1c1c;
+  margin: 0 0 20px;
+}
+.myAccountMenulist ul {
+    padding: 0;
+    margin: 0;
+}
+.myAccountMenulist ul li a svg {
+    width: 25px;
+  margin-right: 15px;
+}
+.myAccountMenulist ul li a {
+    font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1c1c1c;
+  text-decoration: none;
+  display: block;
+}
+.myAccountMenulist ul li {
+    list-style: none;
+  padding: 14px 0;
+}
+.myAccountMenulist ul li ul {
+  padding-left: 34px;
+  padding-top: 6px;
+  display: none;
+}
+.myAccountMenulist ul li a svg.menuDownArrow {
+  float: right;
+  margin: 8px 0 0;
+}
+.myAccountMenulist ul li.dropOpen ul {
+  display: block;
+}
+.myAccountFooter .site-footerBar {
+  box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+}
+.myAccountFooter p.notification_counts.hideCounter {
+    display: none !important;
+}
+.withoutLoginbtns {
+    padding-top: 25px;
+    border-top: 1px solid #e4deff;
+    margin-top: 20px;
+}
+.withoutLoginbtns .btn {
+    border: 1px solid #DC4E43;
+    color: #DC4E43;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 7px 20px;
+}
+.withoutLoginbtns .btn svg {
+    width: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+    display: inline-block;
+}
+// My Account End
+
+.appContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+.footerLine {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #000000;
+    left: 0;
+}
+span.heart {
+    color: #ff544b;
+    animation: pulse 2s infinite;
+    display: inline-block;
+    margin: 0 6px;
+}
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+.mat-raised-button.mat-primary {
+    background: linear-gradient(135deg, #7463e4 0%, #462fb0 100%);
+    padding: 6px 30px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+/* PAGE HEADER CSS START */
+.pageHeader {
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+  padding: 26px 75px;
+  position: relative;
+  margin-bottom: 35px;
+}
+.pageHeader .pageHeaderInner {
+  padding: 26px 75px;
+  position: relative;
+}
+.pageHeader .pageTitle h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1c1c1c;
+  text-align: center;
+}
+.pageHeader .headerLeft,
+.pageHeader .headerRight {
+  position: absolute;
+  left: 30px;
+  height: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+.pageHeader .headerRight {
+  right: 30px;
+  left: auto;
+}
+/* PAGE HEADER CSS END */

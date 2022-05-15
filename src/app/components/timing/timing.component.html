@@ -1,0 +1,114 @@
+<ng-container *ngIf="timing else elseBock">
+    <div class="time">
+        <h5>Fajr</h5>
+        <div class="row">
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Azan</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.first_a}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Jamah</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.first_j}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="time">
+        <h5>Zuhr</h5>
+        <div class="row">
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Azan</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.second_a}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Jamah</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.second_j}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="time">
+        <h5>Asr</h5>
+        <div class="row">
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Azan</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.third_a}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Jamah</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.third_j}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="time">
+        <h5>Magrib</h5>
+        <div class="row">
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Azan</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.fourth_a}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Jamah</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.fourth_j}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="time">
+        <h5>Isha</h5>
+        <div class="row">
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Azan</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.fifth_a}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-6 timeCard">
+                <mat-card>
+                    <mat-card-title>Jamah</mat-card-title>
+                    <mat-card-content>
+                        <div class="timeT">{{timing.fifth_j}}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #elseBock>
+    <div class="loading">Loading...</div>
+</ng-template>
