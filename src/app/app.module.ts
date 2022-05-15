@@ -47,6 +47,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SplashComponent } from './components/splash/splash.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,13 @@ import { MyAccountComponent } from './components/my-account/my-account.component
     MatIconModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [AuthService, AuthGuard, SecureInnerPagesGuard],
   bootstrap: [AppComponent]
