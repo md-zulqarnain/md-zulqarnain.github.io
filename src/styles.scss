@@ -37,8 +37,13 @@ $ng-firebase-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+$fontFamily: 'Poppins', sans-serif;
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: $fontFamily !important;
+}
 .example-full-width {
     width: 100%;
 }
@@ -56,17 +61,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 24px;
     font-weight: 700;
     color: #fff;
+    font-family: $fontFamily;
 }
 .timeCard .mat-card mat-card-title.mat-card-title {
     color: #fff;
     font-weight: 100;
     font-size: 17px;
     margin: 0;
+    font-family: $fontFamily;
 }
 .time > h5 {
     color: #0f0056;
     font-size: 25px;
     font-weight: 500;
+    font-family: $fontFamily;
 }
 .splashScreen{
     display: -webkit-box;
@@ -111,6 +119,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 0 auto;
   display: block;
   opacity: 0.5;
+  width: 28px;
 }
 .site-footer .site-footerBar ul li span {
     display: none;
@@ -327,3 +336,15 @@ span.heart {
   left: auto;
 }
 /* PAGE HEADER CSS END */
+.topBackButton {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background: #ffff;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,30 @@
+<div class="fastingTiming">
+    <div class="app-wrapper">
+
+        <!-- <div class="bannerImage">
+        <img src="./assets/banner.jpg" />
+    </div> -->
+        <div>
+            <a routerLink="../home" class="topBackButton">
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15L1 8L8 1" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+            <div class="fastingTimingContent">
+                <h1><span>Today's</span> Sehri & Iftar Time</h1>
+                <div>
+                    <div class="sehriIftarHeading">Sehri</div>
+                    <h4>{{fastingData?.sahri[monthDay - 1]}} <span>AM</span></h4>
+                </div>
+                <div class="sehriIftarHeading">Iftar</div>
+                <h4>{{fastingData?.iftar[monthDay - 1]}} <span>PM</span></h4>
+                <h5>{{date | date:'d-MM-yyyy'}}</h5>
+            </div>
+        </div>
+
+        <div class="footerLine">
+            <p>Designed with <span class="heart">❤</span> By <span>Zulqarnain</span></p>
+        </div>
+    </div>
+</div>

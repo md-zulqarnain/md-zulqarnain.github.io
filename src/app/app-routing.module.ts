@@ -1,3 +1,4 @@
+import { FastingComponent } from './components/fasting/fasting.component';
 import { HomeComponent } from './components/home/home.component';
 import { UpdateTimingComponent } from './components/update-timing/update-timing.component';
 import { SuperGuard } from './shared/super.guard';
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'fasting',
+    component: FastingComponent,
   },
   {
     path: 'my-account',
