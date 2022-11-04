@@ -48,6 +48,8 @@ import { SplashComponent } from './components/splash/splash.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FastingComponent } from './components/fasting/fasting.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -62,10 +64,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HomeComponent,
     SplashComponent,
     FooterComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    FastingComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,

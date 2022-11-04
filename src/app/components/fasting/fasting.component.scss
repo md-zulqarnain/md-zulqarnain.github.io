@@ -1,0 +1,56 @@
+.text-center{
+    text-align:center
+}
+.app-wrapper {
+    text-align: center;
+    min-height: 100vh;
+    padding-bottom: 53px;
+    box-sizing: border-box;
+    background: rgb(0, 26, 47);
+    background: linear-gradient(135deg, #7463e4 0%, #462fb0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.bannerImage img {
+    max-width: 100%;
+}
+h1 {
+    color: #fff;
+    line-height: 43px;
+    margin-bottom: 23px;
+}
+h1 span {
+    display: block;
+    color: #F9F871;
+}
+.sehriIftarHeading {
+    background: #F9F871;
+    display: inline-block;
+    padding: 7px 22px;
+    color: #001a2f;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+h4 {
+    margin: 15px 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 55px;
+}
+h4 span {
+    font-size: 29px;
+    vertical-align: middle;
+}
+h5 {
+    color: #ffbc00;
+    font-weight: 400;
+    font-size: 21px;
+    margin: 0;
+}
+.footerLine p {
+    margin: 0;
+    color: #fff;
+}
