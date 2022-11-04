@@ -13,12 +13,15 @@
             </a>
             <div class="fastingTimingContent">
                 <h1><span>Today's</span> Sehri & Iftar Time</h1>
-                <div>
+                <div class="timingBlock">
                     <div class="sehriIftarHeading">Sehri</div>
-                    <h4>{{fastingData?.sahri[monthDay - 1]}} <span>AM</span></h4>
+                    <h4>{{sahriTime?.[monthDay - dayNum]}} <span>AM</span></h4>
                 </div>
-                <div class="sehriIftarHeading">Iftar</div>
-                <h4>{{fastingData?.iftar[monthDay - 1]}} <span>PM</span></h4>
+                <div class="timingBlock">
+                    <div class="sehriIftarHeading">Iftar</div>
+                    <h4>{{iftarTime?.[monthDay - dayNum]}} <span>PM</span></h4>
+                    <h6 class="timeLeft">{{iftarTimeLeft}}</h6>
+                </div>
                 <h5>{{date | date:'d-MM-yyyy'}}</h5>
             </div>
         </div>

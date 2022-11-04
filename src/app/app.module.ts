@@ -3,6 +3,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DatePipe } from '@angular/common';
 
 // Firebase services + enviorment module
 import { AngularFireModule } from '@angular/fire/compat';
@@ -97,7 +98,7 @@ import { HttpClientModule } from '@angular/common/http';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [AuthService, AuthGuard, SecureInnerPagesGuard],
+  providers: [AuthService, AuthGuard, SecureInnerPagesGuard, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
