@@ -54,7 +54,7 @@ export class FastingComponent implements OnInit {
             clearInterval(checkFastTimeInterval)
           }
         } 
-      }, 1000)
+      }, 1000) 
      
     let iftarTimeLeftInterval = setInterval(() => { 
       if ((''+this.todayDate.getDate() + this.todayDate.getMonth() + this.todayDate.getFullYear()) == (''+this.date.getDate() + this.date.getMonth() + this.date.getFullYear())) {
