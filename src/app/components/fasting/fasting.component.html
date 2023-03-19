@@ -1,4 +1,4 @@
-<div class="fastingTiming">
+<div class="fastingTiming" (swipe)="onSwipeUp($event)">
     <div class="app-wrapper">
 
         <!-- <div class="bannerImage">
@@ -12,19 +12,45 @@
                 </svg>
             </a>
             <div class="fastingTimingContent">
-                <h1><span>Today's</span> Sehri & Iftar Time</h1>
+                <h1>
+                    <span *ngIf="date.getDate() == todayDate.getDate()">Today's</span>
+                    <span *ngIf="date.getDate() != todayDate.getDate()">{{date|date}}</span>
+                    Sehri & Iftar Time
+                </h1>
                 <div class="timingBlock">
                     <div class="sehriIftarHeading">Sehri</div>
-                    <h4>{{sahriTime?.[monthDay - dayNum]}} <span>AM</span></h4>
+                    <h4>{{sahriTime}} <span>AM</span></h4>
                 </div>
                 <div class="timingBlock">
                     <div class="sehriIftarHeading">Iftar</div>
-                    <h4>{{iftarTime?.[monthDay - dayNum]}} <span>PM</span></h4>
-                    <h6 class="timeLeft">{{iftarTimeLeft}}</h6>
+                    <h4>{{iftarTime}} <span>PM</span></h4>
+                    <h6 class="timeLeft" *ngIf="date.getDate() == todayDate.getDate()">{{iftarTimeLeft}}
+                    </h6>
                 </div>
                 <h5>{{date | date:'d-MM-yyyy'}}</h5>
+
+                <div class="nextPreBtns">
+                    <button (click)="previousDay()" class="nextPreBtn">
+                        <svg width="334" height="600" viewBox="0 0 334 600" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M323.903 9.763C336.92 22.7807 336.92 43.886 323.903 56.9037L80.8072 300L323.903 543.097C336.92 556.113 336.92 577.22 323.903 590.237C310.887 603.253 289.78 603.253 276.763 590.237L10.0965 323.57C-2.92084 310.553 -2.92084 289.447 10.0965 276.43L276.763 9.763C289.78 -3.25433 310.887 -3.25433 323.903 9.763Z"
+                                fill="black" />
+                        </svg>
+                    </button>
+                    <button (click)="nextDay()" class="nextPreBtn">
+                        <svg width="334" height="600" viewBox="0 0 334 600" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.096 9.763C-2.92064 22.7807 -2.92064 43.886 10.096 56.9037L253.192 300L10.096 543.097C-2.92064 556.113 -2.92064 577.22 10.096 590.237C23.1127 603.253 44.2194 603.253 57.236 590.237L323.903 323.57C336.92 310.553 336.92 289.447 323.903 276.43L57.236 9.763C44.2194 -3.25433 23.1127 -3.25433 10.096 9.763Z"
+                                fill="black" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
+
+
 
         <div class="footerLine">
             <p>Designed with <span class="heart">❤</span> By <span>Zulqarnain</span></p>
