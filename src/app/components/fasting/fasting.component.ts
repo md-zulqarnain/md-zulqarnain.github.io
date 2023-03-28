@@ -18,6 +18,7 @@ export class FastingComponent implements OnInit {
   date: any = new Date();
   data: any;
   addDay: Number = 2
+  subtractDay: Number = 1
   todayDate: any = new Date()
   ngOnInit(): void {
     this.monthDay = this.date.getDate();
@@ -28,7 +29,7 @@ export class FastingComponent implements OnInit {
     let month = this.date.getMonth();
     this.dataService.getTimeByMonth(`timing-data-${month + 1}`).subscribe((res) => {
       this.data = res;
-      this.sahriTime = this.addMinutes(res.sahri[this.monthDay - this.dayNum], this.addDay)
+      this.sahriTime = this.subtractMinutes(res.sahri[this.monthDay - this.dayNum], this.subtractDay)
       this.iftarTime = this.addMinutes(res.iftar[this.monthDay - this.dayNum], this.addDay)
       this.checkIsFastOver()
     })
@@ -49,13 +50,13 @@ export class FastingComponent implements OnInit {
             let date = this.date.setDate(this.date.getDate() + 1)
             this.date = new Date(date);
             this.monthDay = this.date.getDate();
-            this.sahriTime = this.addMinutes(this.data.sahri[this.monthDay - this.dayNum], this.addDay)
+            this.sahriTime = this.subtractMinutes(this.data.sahri[this.monthDay - this.dayNum], this.subtractDay)
             this.iftarTime = this.addMinutes(this.data.iftar[this.monthDay - this.dayNum], this.addDay)
             clearInterval(checkFastTimeInterval)
           }
         } 
-      }, 1000) 
-      
+    }, 1000) 
+    
      
     let iftarTimeLeftInterval = setInterval(() => { 
       if ((''+this.todayDate.getDate() + this.todayDate.getMonth() + this.todayDate.getFullYear()) == (''+this.date.getDate() + this.date.getMonth() + this.date.getFullYear())) {
@@ -91,6 +92,18 @@ export class FastingComponent implements OnInit {
     if (minutes > 59) { 
       minutes -= 60
       hours += 1
+    }
+    minutes = Array.from(String(minutes), num=> Number(num)).length == 1 ? `0${minutes}`: minutes
+    hours = Array.from(String(hours), num=> Number(num)).length == 1 ? `0${hours}`: hours
+    return `${hours}:${minutes}`
+  }
+  subtractMinutes(time: any, subtract: any) {
+    let timeArr = time.split(':');
+    let hours:any = +timeArr[0]
+    let minutes:any = +timeArr[1] - subtract;
+    if (minutes < 0) { 
+      minutes = 59
+      hours -= 1
     }
     minutes = Array.from(String(minutes), num=> Number(num)).length == 1 ? `0${minutes}`: minutes
     hours = Array.from(String(hours), num=> Number(num)).length == 1 ? `0${hours}`: hours
